@@ -1,52 +1,86 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <title>Mensaje especial 💖</title>
-  <style>
-    body {
-      background: #ffe6eb;
-      font-family: Arial, Helvetica, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
-    .card {
-      background: white;
-      padding: 30px;
-      border-radius: 15px;
-      text-align: center;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-      max-width: 400px;
-    }
-    h1 {
-      color: #e63946;
-    }
-    p {
-      font-size: 18px;
-    }
-    .footer {
-      margin-top: 20px;
-      font-size: 12px;
-      color: #777;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💕 ¿Quieres ser mi Valentine? 💕</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="card">
-    <h1>💌 Para Hypatia</h1>
-    <p><strong>Marjorie dice:</strong></p>
-    <p>
-      Gracias por decir que sí 💖  
-      Este pequeño mensaje es solo para recordarte
-      lo especial que eres.
-    </p>
-
-    <div class="footer">
-      created by Carlos Romero
+    <!-- Pantalla de inicio con lluvia de corazones -->
+    <div id="heartRain" class="screen active">
+        <div class="title-container">
+            <h1 class="pixel-title">💕 VALENTINE 💕</h1>
+            <p class="pixel-subtitle">Presiona cualquier tecla para comenzar...</p>
+        </div>
+        <canvas id="heartCanvas"></canvas>
     </div>
-  </div>
+
+    <!-- Animación del yorkie corriendo -->
+    <div id="yorkieScene" class="screen">
+        <div class="game-container">
+            <div class="yorkie-wrapper">
+                <div class="yorkie" id="yorkie">
+                    <div class="ear left"></div>
+                    <div class="ear right"></div>
+                    <div class="eye left"></div>
+                    <div class="eye right"></div>
+                    <div class="nose"></div>
+                    <div class="leg front-left"></div>
+                    <div class="leg front-right"></div>
+                    <div class="leg back-left"></div>
+                    <div class="leg back-right"></div>
+                    <div class="tail"></div>
+                </div>
+                <div class="ground"></div>
+            </div>
+            <div class="clouds">
+                <div class="cloud cloud1"></div>
+                <div class="cloud cloud2"></div>
+                <div class="cloud cloud3"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pantalla de pregunta -->
+    <div id="questionScreen" class="screen">
+        <div class="question-container">
+            <div class="question-box">
+                <h2 class="question-text" id="questionText">¿Quieres ser mi Valentine?</h2>
+                <div class="buttons-container">
+                    <button id="yesBtn" class="game-btn yes-btn">SÍ</button>
+                    <button id="noBtn" class="game-btn no-btn">NO</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pantalla de respuesta positiva -->
+    <div id="successScreen" class="screen">
+        <div class="success-container">
+            <div class="success-box">
+                <h2 class="success-title" id="successTitle">¡Gracias por aceptar! 💕</h2>
+                <p class="success-message" id="successMessage1">Eres la mejor persona del mundo y me haces muy feliz.</p>
+                <p class="success-message" id="successMessage2">¡Te amo infinitamente! 💖</p>
+                <button class="coffee-btn-corner" id="coffeeBtn" title="¡Apoya este proyecto con un café! ☕">
+                    <span class="coffee-icon">☕</span>
+                </button>
+                <div class="hearts-celebration">
+                    <span class="heart-emoji">💕</span>
+                    <span class="heart-emoji">💖</span>
+                    <span class="heart-emoji">💗</span>
+                    <span class="heart-emoji">💝</span>
+                    <span class="heart-emoji">💞</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p class="footer-text">Created by Carlos Romero</p>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
