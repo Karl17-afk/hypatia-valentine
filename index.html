@@ -1,0 +1,392 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💕 Crea tu Valentine 💕</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .setup-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+
+        .setup-box {
+            background: rgba(255, 255, 255, 0.95);
+            border: 8px solid #ff6b9d;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 
+                0 0 0 4px #fff,
+                0 0 0 12px #ff6b9d,
+                0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .setup-title {
+            font-size: 1.8rem;
+            color: #ff1744;
+            margin-bottom: 30px;
+            text-align: center;
+            text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.9rem;
+            color: #333;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 15px;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.8rem;
+            border: 4px solid #000;
+            border-radius: 8px;
+            background: #fff;
+            color: #333;
+            box-shadow: 0 4px 0 #000;
+            transition: all 0.2s;
+        }
+
+        .form-input:focus {
+            outline: none;
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 #000;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 20px;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1rem;
+            background: #4caf50;
+            color: #fff;
+            border: 6px solid #000;
+            border-radius: 10px;
+            cursor: pointer;
+            text-transform: uppercase;
+            box-shadow: 
+                0 8px 0 #000,
+                0 12px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.1s;
+            margin-top: 20px;
+        }
+
+        .submit-btn:hover {
+            background: #45a049;
+            transform: translateY(2px);
+            box-shadow: 
+                0 6px 0 #000,
+                0 10px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .submit-btn:active {
+            transform: translateY(4px);
+            box-shadow: 
+                0 4px 0 #000,
+                0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .share-section {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 3px solid #ff6b9d;
+        }
+
+        .share-label {
+            font-size: 0.8rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .share-input {
+            width: 100%;
+            padding: 12px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.7rem;
+            border: 3px solid #000;
+            border-radius: 6px;
+            background: #f5f5f5;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .copy-btn {
+            width: 100%;
+            padding: 12px;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.7rem;
+            background: #2196F3;
+            color: #fff;
+            border: 4px solid #000;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 0 #000;
+            transition: all 0.1s;
+        }
+
+        .copy-btn:hover {
+            background: #1976D2;
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 #000;
+        }
+
+        .copy-btn:active {
+            transform: translateY(4px);
+            box-shadow: 0 0 0 #000;
+        }
+
+        .coffee-btn {
+            width: 100%;
+            padding: 15px;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.9rem;
+            background: #8B4513;
+            color: #fff;
+            border: 6px solid #000;
+            border-radius: 10px;
+            cursor: pointer;
+            text-transform: uppercase;
+            box-shadow: 
+                0 8px 0 #000,
+                0 12px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.1s;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .coffee-btn:hover {
+            background: #654321;
+            transform: translateY(2px);
+            box-shadow: 
+                0 6px 0 #000,
+                0 10px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .coffee-btn:active {
+            transform: translateY(4px);
+            box-shadow: 
+                0 4px 0 #000,
+                0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .coffee-icon {
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="setup-container">
+        <div class="setup-box">
+            <h1 class="setup-title">💕 Crea tu Valentine 💕</h1>
+            <form id="setupForm">
+                <div class="form-group">
+                    <label class="form-label" for="fromName">De (tu nombre):</label>
+                    <input type="text" id="fromName" class="form-input" placeholder="Tu nombre" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="toName">Para (nombre de tu valentine):</label>
+                    <input type="text" id="toName" class="form-input" placeholder="Nombre de tu valentine" required>
+                </div>
+                <button type="submit" class="submit-btn">Crear Valentine 💕</button>
+            </form>
+
+            <div class="share-section" id="shareSection" style="display: none;">
+                <p class="share-label">Comparte este enlace:</p>
+                <input type="text" id="shareLink" class="share-input" readonly>
+                <button class="copy-btn" id="copyBtn">📋 Copiar Enlace</button>
+            </div>
+
+            <button class="coffee-btn" id="coffeeBtn" title="¡Apoya este proyecto con un café! ☕">
+                <span class="coffee-icon">☕</span>
+                <span>Buy my coffee</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal CLABE -->
+    <div id="clabeModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2 class="modal-title">💕 Apoya este proyecto 💕</h2>
+            <div class="clabe-container">
+                <p class="clabe-label">CLABE Interbancaria:</p>
+                <div class="clabe-display" id="clabeDisplay">000000000000000000</div>
+                <button class="copy-clabe-btn" id="copyClabeBtn">📋 Copiar CLABE</button>
+            </div>
+            <p class="modal-note">Nota: Reemplaza la CLABE en setup.html y script.js con tu CLABE real</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p class="footer-text">Created by Juan Carlos Mendez</p>
+    </div>
+
+    <script>
+        // Configuración de CLABE - REEMPLAZA con tu CLABE interbancaria real
+        const CLABE_INTERBANCARIA = '638180000176182306';
+        
+        const form = document.getElementById('setupForm');
+        const shareSection = document.getElementById('shareSection');
+        const shareLink = document.getElementById('shareLink');
+        const copyBtn = document.getElementById('copyBtn');
+        const coffeeBtn = document.getElementById('coffeeBtn');
+        const modal = document.getElementById('clabeModal');
+        const closeBtn = document.querySelector('.modal-close');
+        const clabeDisplay = document.getElementById('clabeDisplay');
+        const copyClabeBtn = document.getElementById('copyClabeBtn');
+        
+        // Configurar modal CLABE
+        if (clabeDisplay) {
+            clabeDisplay.textContent = CLABE_INTERBANCARIA;
+        }
+        
+        // Abrir modal al hacer click en el botón
+        if (coffeeBtn) {
+            coffeeBtn.addEventListener('click', () => {
+                modal.classList.add('active');
+            });
+        }
+        
+        // Cerrar modal al hacer click en la X
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                modal.classList.remove('active');
+            });
+        }
+        
+        // Cerrar modal al hacer click fuera del contenido
+        if (modal) {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                }
+            });
+        }
+        
+        // Cerrar modal con tecla ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
+                modal.classList.remove('active');
+            }
+        });
+        
+        // Copiar CLABE al portapapeles
+        if (copyClabeBtn) {
+            copyClabeBtn.addEventListener('click', () => {
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(CLABE_INTERBANCARIA).then(() => {
+                        copyClabeBtn.textContent = '✓ Copiado!';
+                        copyClabeBtn.classList.add('copied');
+                        setTimeout(() => {
+                            copyClabeBtn.textContent = '📋 Copiar CLABE';
+                            copyClabeBtn.classList.remove('copied');
+                        }, 2000);
+                    }).catch(() => {
+                        fallbackCopyTextToClipboard(CLABE_INTERBANCARIA, copyClabeBtn);
+                    });
+                } else {
+                    fallbackCopyTextToClipboard(CLABE_INTERBANCARIA, copyClabeBtn);
+                }
+            });
+        }
+        
+        // Función fallback para copiar texto
+        function fallbackCopyTextToClipboard(text, button) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.style.position = 'fixed';
+            textArea.style.left = '-999999px';
+            textArea.style.top = '-999999px';
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+                document.execCommand('copy');
+                button.textContent = '✓ Copiado!';
+                button.classList.add('copied');
+                setTimeout(() => {
+                    button.textContent = '📋 Copiar CLABE';
+                    button.classList.remove('copied');
+                }, 2000);
+            } catch (err) {
+                console.error('Error al copiar:', err);
+                button.textContent = '❌ Error';
+                setTimeout(() => {
+                    button.textContent = '📋 Copiar CLABE';
+                }, 2000);
+            }
+            
+            document.body.removeChild(textArea);
+        }
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const fromName = document.getElementById('fromName').value.trim();
+            const toName = document.getElementById('toName').value.trim();
+
+            if (!fromName || !toName) {
+                alert('Por favor completa ambos campos');
+                return;
+            }
+
+            // Reemplazar TODOS los espacios con guiones (múltiples espacios se convierten en un solo guión)
+            let fromNameClean = fromName.trim().replace(/\s+/g, '-');
+            let toNameClean = toName.trim().replace(/\s+/g, '-');
+            
+            // Asegurar que no queden espacios de ningún tipo
+            fromNameClean = fromNameClean.replace(/\s/g, '-').replace(/[%]/g, '');
+            toNameClean = toNameClean.replace(/\s/g, '-').replace(/[%]/g, '');
+            
+            // Crear URL en formato dominio/valentine/
+            const baseUrl = window.location.origin;
+            // Usar /valentine/ como ruta base
+            const pathBase = '/valentine/v2/';
+            
+            // Construir la URL en formato dominio/valentine/msg.html?from=...&to=...
+            const shareUrl = baseUrl + pathBase + 'msg.html?from=' + fromNameClean + '&to=' + toNameClean;
+            
+            // Mostrar la URL en el input
+            shareLink.value = shareUrl;
+            shareSection.style.display = 'block';
+            
+            // NO redirigir, solo mostrar la URL para copiar
+        });
+
+        copyBtn.addEventListener('click', () => {
+            shareLink.select();
+            document.execCommand('copy');
+            
+            const originalText = copyBtn.textContent;
+            copyBtn.textContent = '✓ Copiado!';
+            copyBtn.style.background = '#4caf50';
+            
+            setTimeout(() => {
+                copyBtn.textContent = originalText;
+                copyBtn.style.background = '#2196F3';
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
